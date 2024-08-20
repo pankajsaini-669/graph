@@ -8,9 +8,12 @@ import expressGraphqlUploads from 'graphql-upload/graphqlUploadExpress.mjs'
 import GraphQLUpload from 'graphql-upload/GraphQLUpload.mjs'
 import { type } from 'os'
 import { MongoClient } from 'mongodb'
+import {config} from 'dotenv'
+config()
 // import Upload from 'graphql-upload/Upload.mjs'
 
-const CON_STR = 'mongodb+srv://pankajsainipank669:2osCmZiUlrqOGP0A@cluster0.qr6yq.mongodb.net/sample_mflix?retryWrites=true&w=majority&appName=Cluster0'
+// const CON_STR = 'mongodb+srv://pankajsainipank669:2osCmZiUlrqOGP0A@cluster0.qr6yq.mongodb.net/sample_mflix?retryWrites=true&w=majority&appName=Cluster0'
+const CON_STR = process.env.URI
 const app = express()
 const PORT = 5000
 app.use(expressGraphqlUploads())
